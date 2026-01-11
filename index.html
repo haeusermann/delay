@@ -176,9 +176,10 @@
             /* 
                 Fixed height for the slider track
                 ADJUSTMENT: Change this to make the slider longer/shorter
+                Set to 75% of viewport height for optimal reach on mobile
             */
-            height: 70vh;
-            max-height: 500px;
+            height: 75vh;
+            max-height: 600px;
             min-height: 200px;
         }
 
@@ -206,10 +207,10 @@
             
             /* 
                 ADJUSTMENT: This width becomes the visual height after rotation
-                Change to make the slider track longer/shorter
+                Set to 75vh minus labels to match container height
             */
-            width: calc(70vh - 40px);
-            max-width: 460px;
+            width: calc(75vh - 40px);
+            max-width: 560px;
             min-width: 160px;
             
             height: 32px; /* This becomes the visual width */
@@ -468,6 +469,26 @@
             animation: pulse 2s ease-in-out infinite;
         }
 
+        /* 
+            LOGO IMAGE
+            ----------
+            The app logo displayed on the start screen.
+            ADJUSTMENT: Change max-width to resize the logo.
+        */
+        .start-logo {
+            width: auto;
+            height: auto;
+            max-width: 280px;
+            max-height: 280px;
+            margin-bottom: 24px;
+            /* Subtle animation to draw attention */
+            animation: pulse 2s ease-in-out infinite;
+            /* Smooth rounded edges to match logo design */
+            border-radius: 50%;
+            /* Add subtle shadow for depth */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
         @keyframes pulse {
             0%, 100% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.05); opacity: 0.8; }
@@ -634,14 +655,16 @@
         access the camera (security/privacy requirement).
     -->
     <div class="start-screen" id="startScreen">
-        <!-- Camera icon SVG -->
-        <svg class="start-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M15.6 11.6L22 7v10l-6.4-4.6v-1z"/>
-            <rect x="2" y="6" width="15" height="12" rx="2"/>
-            <circle cx="9.5" cy="12" r="2.5"/>
-        </svg>
+        <!-- 
+            LOGO IMAGE
+            ----------
+            The app logo is displayed here on the start screen.
+            ADJUSTMENT: Replace logo.png with your own logo file.
+        -->
+        <img src="logo.png" alt="Häusermanns Video Feedback App" class="start-logo">
         
-        <h1 class="start-title">Delayed Mirror</h1>
+        <!-- Title removed since logo contains the app name -->
+        
         <p class="start-subtitle">
             View yourself with an adjustable delay. 
             Perfect for training, practice, and form analysis.
