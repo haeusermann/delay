@@ -53,6 +53,7 @@ const FILES_TO_CACHE = [
     '/',                        // Root URL (serves index.html)
     '/index.html',              // Main HTML file
     '/manifest.json',           // PWA manifest
+    '/logo.png',                // App logo for start screen
     '/icons/icon-72.png',       // App icons (various sizes)
     '/icons/icon-96.png',
     '/icons/icon-128.png',
